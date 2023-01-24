@@ -6,4 +6,10 @@ class Person {
         this.name = name
         this.age = age
     }
+
+    // ODER
+    /*
+    class Person(var name: String, var age: Int) {
+    }
+     */
 }

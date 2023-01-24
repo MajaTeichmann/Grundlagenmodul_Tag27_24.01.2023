@@ -2,6 +2,7 @@ fun main(){
     var auto1 = Car(150,"rot",5)
     var auto2 = Car(590,"schwarz",2)
     var auto3 = Car(59,"silber", 4)
+    var auto4 = Car(100,"schwarz",5)
 
     println("""
         Wir haben folgendes Auto: 
@@ -31,14 +32,17 @@ fun main(){
         auto1.getOut()
     println(auto1.belegteSeats)
 
+    println()
     // Was passiert, wenn eine Person in ein bereits volles Auto zusteigen will?
-    println(auto3.getIn())
-    println(auto3.getIn())
-    println(auto3.getIn())
-    println(auto3.getIn())
-    println(auto3.getIn())
-
-    // Was passiert, wenn der Motor gestartet wird, ohne das eine Person im Auto sitzt?
+    auto3.getIn()
+    auto3.getIn()
+    auto3.getIn()
+    auto3.getIn()
+    auto3.getIn()
     println(auto3.belegteSeats)
     println(auto3.startEngine())
+
+    // Was passiert, wenn der Motor gestartet wird, ohne das eine Person im Auto sitzt?
+    println(auto4.belegteSeats)
+    println(auto4.startEngine())
 }

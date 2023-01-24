@@ -7,9 +7,14 @@ class Car {
 
     fun getIn() {
         if (freeSeats in 1..seats) {
-            belegteSeats++ //freeSeats--
+            belegteSeats++
+            freeSeats--
         }
-        else { println("Fehler, wir haben ${freeSeats} freie Sitzplätze!")
+        else if(belegteSeats > seats){
+            println("Das Auto ist voll!")
+        }
+        else {
+            println("Fehler, wir haben ${freeSeats} freie Sitzplätze!")
         }
     }
 
@@ -22,9 +27,10 @@ class Car {
     }
 
     fun startEngine():String {
-        if (belegteSeats != 0) {
+        if (belegteSeats > 0 && belegteSeats <= seats) {
             return drive()
-        } else {
+        }
+        else {
             return "Wir können NICHT los fahren.Es sitzt keiner im Fahrzeug! Dies ist kein Auto mit Autopilot"
         }
     }
